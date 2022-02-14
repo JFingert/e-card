@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<h1 id="name"></h1>
+	<div id="image-container"></div>
+
+</body>
+<script type="text/javascript">
+	var params = new URLSearchParams(window.location.search);
+
+	//name
+	var name = params.get('name');
+  var text = document.getElementById('name');
+  text.innerHTML = name + ',';
+
+  //image
+  var imageName = params.get('image');
+  var img = document.createElement('img');
+  img.src = './' + imageName + '.jpg';
+  img.style = 'object-fit: cover;';
+  var block = document.getElementById('image-container');
+  block.appendChild(img);
+</script>
+</html>
